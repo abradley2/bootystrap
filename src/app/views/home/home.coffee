@@ -1,5 +1,5 @@
 class HomeView extends Backbone.View
-  template: require './home.haml'
+  template: require './home.jade'
   el: '#content-region'
 
   initialize: =>

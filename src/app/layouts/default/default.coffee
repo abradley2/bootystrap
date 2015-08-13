@@ -1,6 +1,6 @@
 class DefaultLayout extends Backbone.View
   el: '#application'
-  template: require './default.haml'
+  template: require './default.jade'
 
   render: ->
     @$el.html @template()

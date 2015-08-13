@@ -1,3 +1,7 @@
+# Todo: I am quite happy with this router, however I think
+# it still needs to handle horizantally aligned views
+# and passing route parameters better
+
 class Router extends Backbone.Router
   routes:
     ""      : "getHome"
@@ -13,11 +17,12 @@ class Router extends Backbone.Router
 
   getHome: ->
     @cleanup 'home'
-    @createView 'home'
-    return
+    return @createView 'home'
 
   cleanup: (newView) ->
-    views = _.omit @views, @views[newView].parent
+    views = _.omit views, newView
+    if @views[newView].parent?
+      views = _.omit @views, @views[newView].parent
     _.each views, (view) =>
       view.isRendered = false
       if view.controller? then view.controller.remove()
@@ -31,6 +36,6 @@ class Router extends Backbone.Router
     @views[newView].isRendered = true
     @views[newView].controller = new @views[newView].factory params
     @views[newView].controller.render()
-    return
+    return @views[newView].controller
 
 module.exports = Router

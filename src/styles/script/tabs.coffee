@@ -21,4 +21,4 @@ class Tabs
     @el.off 'click', 'li > a.tab-link'
     return
 
-module.exports = Tabs
+Components.prototype.Tabs = Tabs

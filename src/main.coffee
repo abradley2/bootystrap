@@ -1,7 +1,7 @@
 window.$ = window.jQuery  = require 'jquery'
 window._                  = require 'lodash'
 window.Backbone           = require 'backbone'
-window.components         = require './styles/main.coffee'
+require 'backbone-relational'
 window.Api                = require './app/api.coffee'
 window.Router             = require './app/router.coffee'
 

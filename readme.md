@@ -1,3 +1,1 @@
-# Reminder to self:
-## Actually finish the readme for once...
-### Also, consider using Jade insteal of HAML. 
+### My starting boilerplate for Backbone websites

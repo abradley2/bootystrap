@@ -1,14 +1,17 @@
-class Api
-  data:
-    user: require './data/user.coffee'
-
-  constructor: ->
-    _.each @data, (factory, name) =>
-      @data[name] = new factory
-      return
+class Api extends Backbone.RelationalModel
+  eventDebug: true
+  relations: [
+    {
+      type: Backbone.HasOne
+      key: 'user'
+      relatedModel: require './data/userModel.coffee'
+      reverseRelation:
+        type: 'HasOne'
+        key: 'api'
+    }
+  ]
+  initialize: ->
+    @set 'user', {id: 'user'}
     return
-
-  get: (model) =>
-    return @data[model]
 
 module.exports = Api
