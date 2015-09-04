@@ -8,7 +8,6 @@ var gulp = require('gulp')
     buffer = require('vinyl-buffer'),
     sourcemaps = require('gulp-sourcemaps'),
     sass = require('gulp-sass'),
-    coffee = require('gulp-coffee'),
     concat = require('gulp-concat'),
     wrap = require('gulp-wrap'),
     assign = require('lodash.assign');
@@ -23,42 +22,50 @@ var b = watchify(browserify(opts));
 b.transform(jadeify);
 b.transform(coffeeify);
 
-gulp.task('app', bundle);
+gulp.task('bundle', bundle);
 b.on('update', bundle);
 b.on('log', gutil.log);
 
 function bundle(){
   return b.bundle()
     .on('error', gutil.log.bind(gutil, 'Browserify Error'))
-    .pipe(source('script.js'))
+    .pipe(source('scripts.js'))
     .pipe(buffer())
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('./public'));
+    .pipe(gulp.dest('./public/js'));
 }
 
+gulp.task('bootstrap', function(){
+  gulp.src('./node_modules/bootstrap/dist/fonts/**')
+    .pipe(gulp.dest('./public/css/fonts'));
+  gulp.src('./node_modules/bootswatch/**')
+    .pipe(gulp.dest('./public/css'));
+});
+
 gulp.task('styles', function(){
-  gulp.src('./src/styles/styles.sass')
+  gulp.src('./src/styles/main.sass')
     .pipe(sass().on('error', sass.logError))
     .pipe(concat('styles.css'))
-    .pipe(gulp.dest('./public/stylesheets'));
-  gulp.src(['./src/styles/script/*.coffee'])
-    .pipe(coffee({bare: true}).on('error', gutil.log))
-    .pipe(concat('styles.js'))
-    .pipe(wrap({src: './src/styles/styles.js'}))
-    .pipe(gulp.dest('./public/stylesheets'));
+    .pipe(gulp.dest('./public/css'));
 });
+
+gulp.task('vendor', function(){
+  gulp.src([
+    './node_modules/requirejs/require.js'
+  ])
+    .pipe(concat('require.js'))
+    .pipe(gulp.dest('./public/js'));
+  gulp.src('./node_modules/requirejs-text/text.js')
+    .pipe(gulp.dest('./public'));
+});
+
+gulp.task('scripts', ['bundle']);
 
 gulp.task('watch',function(){
   gulp.watch(
-    [
-      './src/styles/main.sass',
-      './src/styles/base/*.sass',
-      './src/styles/components/*.sass',
-      './src/styles/pages/*.sass',
-      './src/styles/script/*.coffee'
-    ],
+    ['./src/styles/**/*.sass'],
     ['styles']
   );
 });
 
-gulp.task('default',['app','styles','watch']);
+gulp.task('default',['vendor','scripts','bootstrap','styles','watch']);

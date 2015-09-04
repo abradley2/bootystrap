@@ -1,4 +1,4 @@
-express = require 'express'
+express             = require 'express'
 bodyParser          = require 'body-parser'
 clientSessions      = require 'client-sessions'
 db                  = require './db.coffee'
@@ -11,8 +11,19 @@ app.use clientSessions
   cookieName: 'TonyCodesSession'
   secret: 'thisshitisbananasbeeayyennayyennayyess'
 
-app.get '/', (req, res) ->
-  res.sendFile './public/index.html', root: __dirname
-  return
+app.set 'views', __dirname + '/views'
+app.set 'view engine', 'jade'
+
+app.get '/', (req, res) -> res.render 'main', {theme: db.appSetings.theme}
+
+app.get '/api', (req, res) -> res.json {
+    categories: db.categories
+    userImages: db.userImages
+    userDocs: db.userDocs
+    userComponents: db.userComponents
+    userTemplates: db.userTemplates
+  }
+
+app.get '/designer', (req, res) -> res.render 'designer', {theme: db.appSettings.theme}
 
 server = app.listen 3000
