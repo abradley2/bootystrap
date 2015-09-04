@@ -6,15 +6,19 @@ class ComponentLoader
 
   loadTemplate: (name, templateConfig, callback) ->
     if @components.get(name)?
+      console.log 'loading user template: ',name
       ko.components.defaultLoader.loadTemplate name, window.require 'text!userComponents/#{name}.html', callback
     else
+      console.log 'loading default template: ',name
       callback null
     return
 
   loadViewModel: (name, viewModelConfig, callback) ->
-    if @components.get(name)>
+    if @components.get(name)?
+      console.log 'loading user viewModel: ',name
       ko.components.defaultLoader.loadViewModel name, window.require '/userComponents/#{name}.js', callback
     else
+      console.log 'loading default viewModel: ',name
       callback null
     return
 

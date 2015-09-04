@@ -1,14 +1,15 @@
-class DefaultLayout extends Backbone.View
-  el: '#application'
+class Navigation extends Backbone.View
+  el: '#navigation-container'
   template: require './navigation.jade'
 
   render: ->
     @$el.html @template()
+    ko.applyBindings api.get('categories'), @el
     return
 
-  close: ->
+  remove: ->
+    ko.cleanNode @el
     @$el.empty()
-    @unbind()
     return
 
-module.exports = DefaultLayout
+module.exports = Navigation

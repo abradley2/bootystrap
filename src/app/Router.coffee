@@ -3,7 +3,7 @@ class Router extends Backbone.Router
 
   views: {}
 
-  getHome: -> @createView @cleanup('home')
+  #getHome: -> @createView @cleanup('home')
 
   initialize: ->
     @navigation = new (require './views/navigation/Navigation.coffee')
