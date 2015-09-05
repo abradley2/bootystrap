@@ -20,7 +20,7 @@ $(document).ready ->
   _.extend events, Backbone.events
   window.api = new Api
   api.fetch().then ->
-    ko.components.loaders.unshift(new ComponentLoader(api.get 'components'))
+    ko.components.loaders.unshift(new ComponentLoader(api.get('viewModels'),api.get('templates')))
     window.router = new Router
     Backbone.history.start()
     return

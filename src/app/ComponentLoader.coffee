@@ -1,24 +1,23 @@
 class ComponentLoader
-  constructor: (components) ->
-    @components = components
-    console.log 'my components = ',@components
+  constructor: (viewModels, templates) ->
+    @viewModels = viewModels
+    @templates = templates
     return
 
   loadTemplate: (name, templateConfig, callback) ->
-    if @components.get(name)?
-      console.log 'loading user template: ',name
-      ko.components.defaultLoader.loadTemplate name, window.require 'text!userComponents/#{name}.html', callback
+    if @templates.get(name)?
+      window.require ['js/text!templates/' + name + '.html'], (template) ->
+        ko.components.defaultLoader.loadTemplate name, template, callback
+        return
     else
-      console.log 'loading default template: ',name
       callback null
     return
 
   loadViewModel: (name, viewModelConfig, callback) ->
-    if @components.get(name)?
-      console.log 'loading user viewModel: ',name
-      ko.components.defaultLoader.loadViewModel name, window.require '/userComponents/#{name}.js', callback
+    if @viewModels.get(name)?
+      window.require ['viewModels/' + name + '.js'], (viewModel) ->
+        ko.components.defaultLoader.loadViewModel name, viewModel, callback
     else
-      console.log 'loading default viewModel: ',name
       callback null
     return
 

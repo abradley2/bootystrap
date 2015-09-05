@@ -1,27 +1,27 @@
 module.exports = {
   username: 'Tony'
   password: 'Password'
-  
+
   appSetings:
     theme: 'flatly'
 
-  userComponents: [
+  viewModels: [
 
   ]
 
-  userTemplates: [
-
+  templates: [
+    {id: 'syndicate-navbar'}
   ]
 
   categories: [
 
   ]
 
-  userImages: [
+  images: [
 
   ]
 
-  userDocs: [
+  documents: [
 
   ]
 

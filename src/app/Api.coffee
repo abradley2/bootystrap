@@ -13,9 +13,9 @@ class Api extends Backbone.RelationalModel
     }
     {
       type: 'HasMany'
-      key: 'components'
-      relatedModel: require './data/Component.coffee'
-      collectionType: require './data/Components.coffee'
+      key: 'viewModels'
+      relatedModel: require './data/ViewModel.coffee'
+      collectionType: require './data/ViewModels.coffee'
       reverseRelation:
         type: 'HasOne'
         key: 'api'

@@ -18,10 +18,10 @@ app.get '/', (req, res) -> res.render 'main', {theme: db.appSetings.theme}
 
 app.get '/api', (req, res) -> res.json {
     categories: db.categories
-    userImages: db.userImages
-    userDocs: db.userDocs
-    userComponents: db.userComponents
-    userTemplates: db.userTemplates
+    images: db.images
+    documents: db.documents
+    viewModels: db.viewModels
+    templates: db.templates
   }
 
 app.get '/designer', (req, res) -> res.render 'designer', {theme: db.appSettings.theme}

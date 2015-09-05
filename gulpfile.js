@@ -56,7 +56,7 @@ gulp.task('vendor', function(){
     .pipe(concat('require.js'))
     .pipe(gulp.dest('./public/js'));
   gulp.src('./node_modules/requirejs-text/text.js')
-    .pipe(gulp.dest('./public'));
+    .pipe(gulp.dest('./public/js'));
 });
 
 gulp.task('scripts', ['bundle']);
