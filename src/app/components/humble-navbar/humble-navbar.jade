@@ -9,25 +9,16 @@ nav(class='navbar navbar-default')
         aria-expanded='false'
         )
         span(class='sr-only') Toggle navigation
+      // ko if: hasHome
       a(class='navbar-brand' href='#home') Home
+      // /ko 
     div(class='collapse navbar-collapse' id='navigation-list')
       ul(class='nav navbar-nav')
+        // ko foreach: navlinks
         li
-          a(href='#stuff') Stuff
+          syndicate-navlink(params='$data')
         li
-          a(href='#events') Events
+          syndicate-navlink(params='$data')
         li
-          a(href='#about') About
-        li(data-ifnot='loggedIn')
-          a(href='#loginRegister')
-            i(class='fa fa-sign-in')
-            span Login/Register
-        li(data-if='loggedIn')
-          a(href='#profile') Profile
-        li(data-if='loggedIn')
-          a(
-            href='javascript:void(0);' 
-            data-action='logout'
-            )
-            i(class='fa fa-sign-out')
-            span Logout
+          syndicate-navlink(params='$data')
+        // /ko
