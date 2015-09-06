@@ -6,11 +6,11 @@ class Category extends Backbone.View
 
     return
 
-  render: ->
+  render: (params) ->
     @setElement @el
     @$el.html @template()
     ko.cleanNode @el
-    ko.applyBindings {}, @el
+    ko.applyBindings {categoryId: params}, @el
     return
 
   remove: ->
