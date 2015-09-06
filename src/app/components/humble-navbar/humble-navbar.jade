@@ -14,12 +14,12 @@ nav(class='navbar navbar-inverse')
       // /ko 
     div(class='collapse navbar-collapse' id='navigation-list')
       ul(class='nav navbar-nav' data-bind='foreach: navlinks')
+      
         //ko if: _.isUndefined($data.get('subCategories'))
-        li
-          a(data-bind='component: {name: "humble-navlink", params: $data}')      
+        li(data-bind='component: {name: "humble-navlink", params: $data}')      
         // /ko
-        //ko ifnot: _.isUndefined($data.get('subCategories'))
-        li
-          ul(data-bind='component: {name: "humble-nav-dropdown", params: $data}')
+        
+        //ko ifnot: _.isUndefined($data.get('subCategories'))    
+        li(data-bind='component: {name: "humble-nav-dropdown", params: $data}')
         // /ko
         

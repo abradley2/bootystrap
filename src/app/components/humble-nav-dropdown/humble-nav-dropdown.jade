@@ -1,1 +1,7 @@
-li test
+a(href='javascript:void(0);' data-bind='initComponent' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false')
+  span(data-bind='text: name')
+  span(class='caret')
+  
+ul(class='dropdown-menu' data-bind='foreach: subCategories')
+  li(data-bind='component: {name: "humble-navlink", params: $data}')
+  

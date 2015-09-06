@@ -13,8 +13,8 @@ class HumbleNavlink
     return
 
   initComponent: (view) ->
-    linkElement = $(view).parent()
-    linkElement.attr 'href', @linkDestination()
+    # linkElement = $(view).parent()
+    # linkElement.attr 'href', @linkDestination()
     return
 
   dispose: ->

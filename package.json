@@ -42,6 +42,8 @@
     "knockout": "~3.3.0",
     "requirejs-text": "~2.0.12",
     "bourbon": "~4.2.4",
-    "marked": "~0.3.5"
+    "marked": "~0.3.5",
+    "bootstrap": "~3.3.5",
+    "bootswatch": "~3.3.5"
   }
 }

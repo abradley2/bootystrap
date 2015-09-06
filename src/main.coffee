@@ -8,6 +8,7 @@ ko.mapping = require 'knockout.mapping'
 require './app/bindings/index.coffee'
 require './app/components/index.coffee'
 
+require '../node_modules/bootstrap/dist/js/npm.js'
 window.moment             = require 'moment'
 window.marked             = require 'marked'
 
