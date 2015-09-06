@@ -4,6 +4,15 @@ class Api extends Backbone.RelationalModel
   relations: [
     {
       type: 'HasMany'
+      key: 'navlinks'
+      relatedModel: require './data/Navlink.coffee'
+      collectionType: require './data/Navlinks.coffee'
+      reverseRelation:
+        type: 'HasOne'
+        key: 'api'
+    }
+    {
+      type: 'HasMany'
       key: 'categories'
       relatedModel: require './data/Category.coffee'
       collectionType: require './data/Categories.coffee'

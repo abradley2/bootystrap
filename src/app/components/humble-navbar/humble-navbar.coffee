@@ -1,7 +1,9 @@
 class HumbleNavbar
 
   constructor: (params) ->
-    @hasHome = ko.observable false
+    console.log 'my navlinks = ',api.get('navlinks').models
+    @navlinks = ko.observableArray api.get('navlinks').models
+    @hasHome = ko.observable(false)
     return
 
   initComponent: (view) ->

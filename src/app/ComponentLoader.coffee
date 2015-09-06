@@ -1,4 +1,5 @@
 class ComponentLoader
+  
   constructor: (viewModels, templates) ->
     @viewModels = viewModels
     @templates = templates

@@ -1,4 +1,4 @@
-nav(class='navbar navbar-default')
+nav(class='navbar navbar-inverse')
   div(class='container-fluid')
     div(class='navbar-header')
       button(
@@ -13,12 +13,13 @@ nav(class='navbar navbar-default')
       a(class='navbar-brand' href='#home') Home
       // /ko 
     div(class='collapse navbar-collapse' id='navigation-list')
-      ul(class='nav navbar-nav')
-        // ko foreach: navlinks
+      ul(class='nav navbar-nav' data-bind='foreach: navlinks')
+        //ko if: _.isUndefined($data.get('subCategories'))
         li
-          syndicate-navlink(params='$data')
-        li
-          syndicate-navlink(params='$data')
-        li
-          syndicate-navlink(params='$data')
+          a(data-bind='component: {name: "humble-navlink", params: $data}')      
         // /ko
+        //ko ifnot: _.isUndefined($data.get('subCategories'))
+        li
+          ul(data-bind='component: {name: "humble-nav-dropdown", params: $data}')
+        // /ko
+        
