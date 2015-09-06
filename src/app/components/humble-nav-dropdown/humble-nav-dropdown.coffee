@@ -2,7 +2,10 @@ class HumbleDropdownNav
 
   constructor: (params) ->
     @name = ko.observable params.get 'name'
-    @subCategories = ko.observableArray params.get 'subCategories'
+    @listItems = ko.observableArray()
+    if params.get('type') == 'articleGroup' then @listItems params.get('articles').models
+    if params.get('type') == 'categoryGroup' then @listItems params.get('categories').models
+    
     return
 
   initComponent: (view) ->

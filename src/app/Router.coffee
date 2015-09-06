@@ -1,9 +1,17 @@
 class Router extends Backbone.Router
-  routes: {}
+  routes:
+    'categories/:categoryId'  : 'getCategory'
+    'articles/:articleId'     : 'getArticle'
 
-  views: {}
+  views:
+    category:
+      factory: require './views/category/Category.coffee'
+    article:
+      factory: require './views/article/Article.coffee'
 
-  #getHome: -> @createView @cleanup('home')
+  getCategory: (params) -> @createView @cleanup('category'), params
+
+  getArticle: (params) -> @createView @cleanup('article'), params
 
   initialize: ->
     @navigation = new (require './views/navigation/Navigation.coffee')
@@ -19,7 +27,7 @@ class Router extends Backbone.Router
       return
     return newView
 
-  createView: (newView,params) ->
+  createView: (newView, params) ->
     @views[newView].isRendered = true
     if !@views[newView].controller?
       @views[newView].controller = new @views[newView].factory

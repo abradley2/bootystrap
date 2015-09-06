@@ -2,6 +2,6 @@ a(href='javascript:void(0);' data-bind='initComponent' data-toggle='dropdown' ro
   span(data-bind='text: name')
   span(class='caret')
   
-ul(class='dropdown-menu' data-bind='foreach: subCategories')
+ul(class='dropdown-menu' data-bind='foreach: listItems')
   li(data-bind='component: {name: "humble-navlink", params: $data}')
   

@@ -15,11 +15,11 @@ nav(class='navbar navbar-inverse')
     div(class='collapse navbar-collapse' id='navigation-list')
       ul(class='nav navbar-nav' data-bind='foreach: navlinks')
       
-        //ko if: _.isUndefined($data.get('subCategories'))
+        //ko if: $data.get('type') == 'category' || $data.get('type') == 'article'
         li(data-bind='component: {name: "humble-navlink", params: $data}')      
         // /ko
         
-        //ko ifnot: _.isUndefined($data.get('subCategories'))    
+        //ko if: $data.get('type') == 'categoryGroup' || $data.get('type') == 'articleGroup'  
         li(data-bind='component: {name: "humble-nav-dropdown", params: $data}')
         // /ko
         

@@ -17,7 +17,17 @@ app.set 'view engine', 'jade'
 
 app.get '/', (req, res) -> res.render 'main', {theme: db.appSetings.theme}
 
-app.get '/api', (req, res) -> res.json {
+app.get '/api', (req, res) ->
+
+  _.each db.navlinks, (navlink,idx) ->
+    if navlink.type == 'categoryGroup'
+      db.navlinks[idx].categories = _.map navlink.categoryIds, (categoryId) ->
+        return _.find db.categories, id: categoryId
+    else if navlink.type == 'articleGroup'
+      db.navlinks[idx].articles = _.map navlink.articleIds, (articleId) ->
+        return _.find db.articles, id: articleId
+
+  return res.json {
     navlinks: db.navlinks
     images: db.images
     documents: db.documents
@@ -30,9 +40,6 @@ app.get '/category/:categoryId', (req, res) ->
 
     articles: _.filter db.articles, (article) ->
       return category.articles.indexOf(article.guid) != -1
-
-    subCategories: _.filter db.subCategories, (subCategory) ->
-      return category.subCategories.indexOf(article.guid) != -1
 
   }
 

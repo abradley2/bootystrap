@@ -12,44 +12,30 @@ module.exports = {
       guid: 'wetpohawptoghawe'
       name: 'Category One Article One'
       staticName: 'CategoryOneArticleOne'
-      component: 'default'
-      pageComponent: 'default'
       author: 'Tony Bradley'
       publishDate: '99/88/44'
       summary: 'This is the summary of Category One Article One'
     }
     {
-      id: 1
+      id: 2
       type: 'category'
       guid: '09823523tjpwegp32985239h'
       name: 'Category One'
       staticName: 'CategoryOne'
-      viewModel: 'default'
-      template: 'default'
-      articleViewModel: 'default'
-      articleTemplate: 'default'
-      pageViewModel: 'default'
-      pageTemplate: 'default'
       articles: [
-        'wetpohawptoghawe'
-        'aeptohoifjewyere'
+        3
+        4
       ]
     }
     {
-      id: 2
-      type: 'category'
+      id: 1
+      type: 'categoryGroup'
       guid: 'oht09842uihhru8y34ueeeaw'
-      name: 'Category Two'
-      staticName: 'CategoryTwo'
-      viewModel: 'default'
-      template: 'default'
-      articleViewModel: 'default'
-      articleTemplate: 'default'
-      pageViewModel: 'default'
-      pageTemplate: 'default'
-      subCategories: [
-        'sgpohwepothewgnaeaetwayn'
-        'rtiovjnehikejetopiaweteei'
+      name: 'Category Group One'
+      staticName: 'CategoryGroupOne'
+      categoryIds: [
+        4
+        5
       ]
     }
   ]
@@ -62,6 +48,24 @@ module.exports = {
     # {id: 'syndicate-navbar'}
   ]
 
+  articleGroups: [
+
+  ]
+
+  categoryGroups: [
+    {
+      id: 1
+      type: 'categoryGroup'
+      guid: 'oht09842uihhru8y34ueeeaw'
+      name: 'Category Group One'
+      staticName: 'CategoryGroupOne'
+      categoryIds: [
+        4
+        5
+      ]
+    }
+  ]
+
   articles: [
     {
       id: 1
@@ -69,8 +73,6 @@ module.exports = {
       guid: 'wetpohawptoghawe'
       name: 'Category One Article One'
       staticName: 'CategoryOneArticleOne'
-      component: 'default'
-      pageComponent: 'default'
       author: 'Tony Bradley'
       publishDate: '99/88/44'
       summary: 'This is the summary of Category One Article One'
@@ -81,8 +83,6 @@ module.exports = {
       guid: 'aeptohoifjewyere'
       name: 'Category One Article Two'
       staticName: 'CategoryOneArticleTwo'
-      component: 'default'
-      pageComponent: 'default'
       author: 'Sammi Bradley'
       publishDate: '55/33/11'
       summary: 'This is the summary of Category One Article Two'
@@ -93,8 +93,6 @@ module.exports = {
       guid: 'uwgpuherpiuhgiw'
       name: 'SubCategory Two Article One'
       staticName: 'SubCategoryTwoArticleOne'
-      component: 'default'
-      pageComponent: 'default'
       author: 'Vito Bradley'
       publishDate: '55/33/11'
       summary: 'This is the summary of SubCategory Two Article One'
@@ -105,8 +103,6 @@ module.exports = {
       guid: 'wetpoietophwegpohgwe'
       name: 'SubCategory Two Article Two'
       staticName: 'SubCategoryTwoArticleTwo'
-      component: 'default'
-      pageComponent: 'default'
       author: 'Vito Bradley'
       publishDate: '55/33/11'
       summary: 'This is the summary of SubCategory Two Article Two'
@@ -117,8 +113,6 @@ module.exports = {
       guid: 'giugerbjth348y7eroihger'
       name: 'Category Three Article One'
       staticName: 'CategoryThreeArticleOne'
-      component: 'default'
-      pageComponent: 'default'
       author: 'Charlie Bradley'
       publishDate: '11/55/66'
       summary: 'This is the summary of Category Three Article One'
@@ -132,15 +126,9 @@ module.exports = {
       guid: '09823523tjpwegp32985239h'
       name: 'Category One'
       staticName: 'CategoryOne'
-      viewModel: 'default'
-      template: 'default'
-      articleViewModel: 'default'
-      articleTemplate: 'default'
-      pageViewModel: 'default'
-      pageTemplate: 'default'
       articles: [
-        'wetpohawptoghawe'
-        'aeptohoifjewyere'
+        1
+        2
       ]
     }
     {
@@ -149,15 +137,9 @@ module.exports = {
       guid: 'oht09842uihhru8y34ueeeaw'
       name: 'Category Two'
       staticName: 'CategoryTwo'
-      viewModel: 'default'
-      template: 'default'
-      articleViewModel: 'default'
-      articleTemplate: 'default'
-      pageViewModel: 'default'
-      pageTemplate: 'default'
-      subCategories: [
-        'sgpohwepothewgnaeaetwayn'
-        'rtiovjnehikejetopiaweteei'
+      articles: [
+        1
+        3
       ]
     }
     {
@@ -168,41 +150,28 @@ module.exports = {
       staticName: 'CategoryThree'
       viewModel: 'default'
       template: 'default'
-      articleViewModel: 'default'
-      articleTemplate: 'default'
-      pageViewModel: 'default'
-      pageTemplate: 'default'
       articles: [
-        'giugerbjth348y7eroihger'
+        3
       ]
     }
-  ]
-
-  subCategories: [
     {
-      id: 1
-      type: 'subCategory'
+      id: 4
+      type: 'category'
       guid: 'sgpohwepothewgnaeaetwayn'
-      name: 'Category Two: A'
-      articleViewModel: 'default'
-      articleTemplate: 'default'
-      pageViewModel: 'default'
-      pageTemplate: 'default'
+      name: 'Category Group One: A'
+      staticName: 'CategoryGroupOneA'
       articles: [
-        'uwgpuherpiuhgiw'
+        4
       ]
     }
     {
-      id: 2
-      type: 'subCategory'
+      id: 5
+      type: 'category'
       guid: 'rtiovjnehikejetopiaweteei'
-      name: 'Category Two: B'
-      articleViewModel: 'default'
-      articleTemplate: 'default'
-      pageViewModel: 'default'
-      pageTemplate: 'default'
+      name: 'Category Group One: B'
+      staticName: 'CategoryGroupOneB'
       articles: [
-        'wetpoietophwegpohgwe'
+        5
       ]
     }
   ]

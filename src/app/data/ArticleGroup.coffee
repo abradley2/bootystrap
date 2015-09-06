@@ -1,4 +1,5 @@
-class SubCategory extends Backbone.RelationalModel
+class ArticleGroup extends Backbone.RelationalModel
+  idAttribute: 'guid'
   relations: [
     {
       type: 'HasMany'
@@ -7,8 +8,8 @@ class SubCategory extends Backbone.RelationalModel
       collectionType: require './Articles.coffee'
       reverseRelation:
         type: 'HasOne'
-        key: 'subCategory'
+        key: 'articleGroup'
     }
   ]
 
-module.exports = SubCategory
+module.exports = ArticleGroup
