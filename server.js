@@ -1,2 +1,2 @@
 require('coffee-script/register');
-require('./server/main.coffee');
+require('./server/index.coffee');

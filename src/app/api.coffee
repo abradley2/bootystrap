@@ -1,17 +1,5 @@
 class Api extends Backbone.RelationalModel
   eventDebug: true
-  relations: [
-    {
-      type: Backbone.HasOne
-      key: 'user'
-      relatedModel: require './data/userModel.coffee'
-      reverseRelation:
-        type: 'HasOne'
-        key: 'api'
-    }
-  ]
-  initialize: ->
-    @set 'user', {id: 'user'}
-    return
+  relations: require './data/index.coffee'
 
-module.exports = Api
+module.exports = new Api()

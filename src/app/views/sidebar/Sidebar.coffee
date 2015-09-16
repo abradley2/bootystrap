@@ -1,6 +1,6 @@
-class HomeView extends Backbone.View
-  template: require './home.jade'
-  el: '#content-region'
+class SidebarView extends Backbone.View
+  template: require './sidebar.jade'
+  el: '#sidebar-region'
 
   initialize: ->
     # always reset element on initialization in case the layout has been switched
@@ -9,6 +9,7 @@ class HomeView extends Backbone.View
 
   render: ->
     @$el.html @template()
+    console.log 'sidebar rendered',this,@$el.html()
     return
 
   remove: ->
@@ -17,4 +18,4 @@ class HomeView extends Backbone.View
     @unbind()
     return
 
-module.exports = HomeView
+module.exports = SidebarView

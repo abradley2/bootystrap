@@ -1,5 +1,5 @@
-class HomeView extends Backbone.View
-  template: require './home.jade'
+class AboutView extends Backbone.View
+  template: require './about.jade'
   el: '#content-region'
 
   initialize: ->
@@ -9,6 +9,7 @@ class HomeView extends Backbone.View
 
   render: ->
     @$el.html @template()
+    console.log 'about rendered',this,@$el.html()
     return
 
   remove: ->
@@ -17,4 +18,4 @@ class HomeView extends Backbone.View
     @unbind()
     return
 
-module.exports = HomeView
+module.exports = AboutView
