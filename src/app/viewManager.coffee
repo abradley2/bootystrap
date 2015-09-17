@@ -18,7 +18,10 @@ class ViewManager extends Backbone.View
   cleanup: (newView) ->
     _.each _.omit(@views, newView), (view) =>
       view.isRendered = false
-      if view.controller? then view.controller.remove()
+      if view.controller?
+        if view.controller.remove?
+          view.controller.remove()
+        else view.controller._remove()
       view.controller = null
     return newView
 
@@ -30,7 +33,10 @@ class ViewManager extends Backbone.View
       @views[newView].isRendered = true
       if !@views[newView].controller?
         @views[newView].controller = new @views[newView].factory
-      @views[newView].controller.render params
+      if @views[newView].controller.render?
+        @views[newView].controller.render params
+      else
+        @views[newView].controller._render params
       return @views[newView].controller
 
 module.exports = new ViewManager()

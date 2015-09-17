@@ -2,20 +2,16 @@ class HomeView extends Backbone.View
   template: require './home.jade'
   el: '#content-region'
 
-  initialize: ->
-    # always reset element on initialization in case the layout has been switched
-    @setElement @el
-    return
-
   render: ->
+    @setElement @el
     @$el.html @template()
-    return
+    ko.cleanNode @el
+    ko.applyBindings {}, @el
 
   remove: ->
     ko.cleanNode @el
     @$el.empty()
     @stopListening()
     @unbind()
-    return
 
 module.exports = HomeView
