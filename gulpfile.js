@@ -18,6 +18,6 @@ gulp.task('watch', function(){
 
 gulp.task('build',['browserify','libs','styles']);
 
-gulp.task('develop',['watchify','libs','styles','watch']);
+gulp.task('development',['watchify','libs','styles','watch']);
 
 gulp.task('default',['build']);

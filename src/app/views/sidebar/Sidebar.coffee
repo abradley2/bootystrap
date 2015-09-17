@@ -9,10 +9,10 @@ class SidebarView extends Backbone.View
 
   render: ->
     @$el.html @template()
-    console.log 'sidebar rendered',this,@$el.html()
     return
 
   remove: ->
+    ko.cleanNode @el
     @$el.empty()
     @stopListening()
     @unbind()

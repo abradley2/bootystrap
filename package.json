@@ -42,7 +42,7 @@
   },
   "scripts": {
     "test": "gulp test",
-    "watch-client": "gulp develop",
+    "watch-client": "gulp development",
     "build-client": "gulp build",
     "watch-server": "nodemon server.js",
     "build-server": "node server.js",

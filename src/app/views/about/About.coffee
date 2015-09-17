@@ -9,10 +9,10 @@ class AboutView extends Backbone.View
 
   render: ->
     @$el.html @template()
-    console.log 'about rendered',this,@$el.html()
     return
 
   remove: ->
+    ko.cleanNode @el
     @$el.empty()
     @stopListening()
     @unbind()

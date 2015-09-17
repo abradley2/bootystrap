@@ -12,6 +12,7 @@ class HomeView extends Backbone.View
     return
 
   remove: ->
+    ko.cleanNode @el
     @$el.empty()
     @stopListening()
     @unbind()
