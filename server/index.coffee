@@ -1,4 +1,6 @@
 # Application
+
+api = require './api.coffee'
 app = require './app.coffee'
 
 # Routes
