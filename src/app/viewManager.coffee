@@ -7,7 +7,10 @@ class ViewManager extends Backbone.View
     _.each @views, (view) => view.isRendered = false
     _.each @layouts, (layout) => layout.isRendered = false
 
-  render: (view, params) -> @createView @cleanup(view), params
+  render: (options, params) ->
+    @cleanupViews options.views
+    @renderLayout options.layout
+    @renderView options.views, params
 
   renderLayout: (layout) ->
     if !@layouts[layout].isRendered
@@ -15,28 +18,21 @@ class ViewManager extends Backbone.View
       @layouts[layout].isRendered = true
     _.each _.omit(@layouts, layout), (layout) -> layout.isRendered = false
 
-  cleanup: (newView) ->
+  cleanupViews: (newView) ->
     _.each _.omit(@views, newView), (view) =>
       view.isRendered = false
       if view.controller?
-        if view.controller.remove?
-          view.controller.remove()
-        else view.controller._remove()
+        view.controller.remove()
       view.controller = null
-    return newView
 
-  createView: (newView, params) ->
+  renderView: (newView, params) ->
     if _.isArray(newView)
-      _.each newView, (view) => @createView(view, params)
+      _.each newView, (view) => @renderView(view, params)
     else
-      @renderLayout @views[newView].layout
       @views[newView].isRendered = true
       if !@views[newView].controller?
         @views[newView].controller = new @views[newView].factory
-      if @views[newView].controller.render?
-        @views[newView].controller.render params
-      else
-        @views[newView].controller._render params
+      @views[newView].controller.render params
       return @views[newView].controller
 
 module.exports = new ViewManager()

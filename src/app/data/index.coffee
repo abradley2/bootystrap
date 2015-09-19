@@ -3,7 +3,7 @@
 
 module.exports = [
   {
-    type: Backbone.HasOne
+    type: 'HasOne'
     key: 'user'
     relatedModel: require './UserModel.coffee'
     reverseRelation:

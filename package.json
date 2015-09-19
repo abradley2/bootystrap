@@ -1,7 +1,7 @@
 {
   "name": "hipster-stack",
   "version": "1.0.0",
-  "description": "Rapid Application Development with Express, Backbone and Knockout. CoffeeScript, Sass, and Jade are all used as cleaner alternatives to JavaScript, CSS, and HTML",
+  "description": "Rapid Application Development with Express, Backbone and Knockout.",
   "main": "app.js",
   "dependencies": {
     "backbone": "^1.2.3",
@@ -28,6 +28,7 @@
     "gulp": "~3.9.0",
     "gulp-coffee": "^2.3.1",
     "gulp-concat": "^2.6.0",
+    "gulp-mocha": "^2.1.3",
     "gulp-sass": "~2.0.3",
     "gulp-sourcemaps": "^1.5.2",
     "gulp-util": "^3.0.6",
@@ -35,7 +36,9 @@
     "jadeify": "^4.4.0",
     "lodash.assign": "^3.2.0",
     "mocha": "^2.3.2",
+    "mochify": "^2.13.0",
     "phantomjs": "^1.9.18",
+    "sinon": "^1.16.1",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.2.3"

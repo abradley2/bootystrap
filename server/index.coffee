@@ -1,5 +1,4 @@
-mongoose = require 'mongoose'
-
+# Application
 app = require './app.coffee'
 
 # Routes

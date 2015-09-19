@@ -1,10 +1,10 @@
-exports._render = (params) ->
-  @setElement @el
+exports.render = (params) ->
+  @setElement @region
   @$el.html @template()
   ko.cleanNode @el
   ko.applyBindings {params: params, view: this}, @el
 
-exports._remove = ->
+exports.remove = ->
   ko.cleanNode @el
   @$el.empty()
   @stopListening()

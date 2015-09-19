@@ -1,17 +1,16 @@
 window.$ = window.jQuery  = require 'jquery'
 window._ = require 'lodash'
 window.Backbone = require 'backbone'
-require 'backbone-relational'
 window.ko = require 'knockout'
+require 'backbone-relational'
 require './bindings/index.coffee'
 require './components/index.coffee'
 
 # If you need to use additional libraries, require them here
 
-
-Backbone.KnockoutView = Backbone.View.extend require './fn/viewUtils.coffee'
-_.extend Backbone.Model, require './fn/modelUtils.coffee'
-_.extend Backbone.Collection, require './fn/collectionUtils.coffee'
+_.extend Backbone.View.prototype, require './fn/viewUtils.coffee'
+_.extend Backbone.Model.prototype, require './fn/modelUtils.coffee'
+_.extend Backbone.Collection.prototype, require './fn/collectionUtils.coffee'
 
 $(document).ready ->
   window.events       = _.extend {}, Backbone.Events
