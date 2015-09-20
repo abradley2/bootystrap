@@ -53,7 +53,7 @@
   },
   "scripts": {
     "test": "karma start",
-    "watch-client": "gulp development",
+    "watch-client": "gulp watch",
     "build-client": "gulp build",
     "watch-server": "nodemon server.js",
     "build-server": "node server.js",
