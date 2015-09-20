@@ -1,16 +1,15 @@
 // karma.conf.js
 module.exports = function(config) {
   config.set({
-    frameworks: ['browserify', 'mocha'],
-    files: ['./test/test.test.coffee'],
-    browsers: ['PhantomJS'],
-
+    frameworks: ['mocha','browserify'],
+    preprocessors: {
+      'test/**/*.coffee': [ 'browserify' ]
+    },
     browserify: {
       debug: true,
-      transform: ['coffeeify']
-    }
-
-
-
+      transform: [ 'coffeeify' ]
+    },
+    browsers: ['PhantomJS'],
+    files: ['./test/test.test.coffee']
   });
 };
