@@ -5,11 +5,17 @@ module.exports = function(config) {
     preprocessors: {
       'test/**/*.coffee': [ 'browserify' ]
     },
+    reporters: ['nyan'],
+
+    nyanReporter: {
+      suppressErrorReport: true,
+      suppressErrorHighlighting: true
+    },
     browserify: {
       debug: true,
-      transform: [ 'coffeeify' ]
+      transform: [ 'coffeeify', 'stringify' ]
     },
     browsers: ['PhantomJS'],
-    files: ['./test/test.test.coffee']
+    files: ['./test/**/*.test.coffee']
   });
 };
