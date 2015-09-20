@@ -1,4 +1,4 @@
-# This test is here as a simple mocha/chai playground
+
 chai = require 'chai'
 require './helpers.coffee'
 
