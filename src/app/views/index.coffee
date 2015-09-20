@@ -1,18 +1,7 @@
-# Define the layout and view-factory of each view that can be rendered
-# by the viewManager
+exports.home = require './home/Home.coffee'
 
-exports.home = {
-  factory: require './home/Home.coffee'
-}
+exports.about = require './about/About.coffee'
 
-exports.about = {
-  factory: require './about/About.coffee'
-}
+exports.sidebar = require './sidebar/Sidebar.coffee'
 
-exports.sidebar = {
-  factory: require './sidebar/Sidebar.coffee'
-}
-
-exports.navigation = {
-  factory: require './navigation/Navigation.coffee'
-}
+exports.navigation = require './navigation/Navigation.coffee'

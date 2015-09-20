@@ -1,11 +1,18 @@
 class ViewManager extends Backbone.View
-  el: '#application-region'
-  layouts: require './layouts/index.coffee'
-  views: require './views/index.coffee'
+
+  parseFactories = (factoryArray) ->
+    retVal = {}
+    _.each factoryArray, (factory, name) ->
+      retVal[name] = {
+        factory: factory
+        isRendered: false
+      }
+    return retVal
 
   initialize: ->
-    _.each @views, (view) => view.isRendered = false
-    _.each @layouts, (layout) => layout.isRendered = false
+    @setElement '#application-region'
+    @views = parseFactories require './views/index.coffee'
+    @layouts = parseFactories require './layouts/index.coffee'
 
   render: (options, params) ->
     @cleanupViews options.views
@@ -14,7 +21,7 @@ class ViewManager extends Backbone.View
 
   renderLayout: (layout) ->
     if !@layouts[layout].isRendered
-      @$el.html @layouts[layout]()
+      @$el.html @layouts[layout].factory()
       @layouts[layout].isRendered = true
     _.each _.omit(@layouts, layout), (layout) -> layout.isRendered = false
 
