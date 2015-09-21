@@ -1,4 +1,4 @@
-class NavigationView extends Backbone.View
+class NavigationView extends KnockoutView
   template: require './navigation.jade'
   region: '#navigation-region'
 

@@ -1,4 +1,4 @@
-class HomeView extends Backbone.View
+class HomeView extends KnockoutView
   template: require './home.jade'
   region: '#content-region'
 

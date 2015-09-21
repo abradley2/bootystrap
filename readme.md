@@ -1,1 +1,2 @@
-# Express + Backbone + Knockout
+# hipster-stack
+### MORE POWAH

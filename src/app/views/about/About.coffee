@@ -1,4 +1,4 @@
-class AboutView extends Backbone.View
+class AboutView extends KnockoutView
   template: require './about.jade'
   region: '#content-region'
 
