@@ -13,7 +13,7 @@ module.exports = function(config) {
     },
     browserify: {
       debug: true,
-      transform: [ 'coffeeify', 'stringify' ]
+      transform: [ 'coffeeify', 'jadeify' ]
     },
     browsers: ['PhantomJS'],
     files: ['./test/**/*.test.coffee']

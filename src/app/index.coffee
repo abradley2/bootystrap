@@ -8,9 +8,9 @@ require './components/index.coffee'
 
 # If you need to use additional libraries, require them here
 
-# _.extend Backbone.View.prototype, require './fn/viewUtils.coffee'
-# _.extend Backbone.Model.prototype, require './fn/modelUtils.coffee'
-# _.extend Backbone.Collection.prototype, require './fn/collectionUtils.coffee'
+_.extend Backbone.View.prototype, require './fn/viewUtils.coffee'
+_.extend Backbone.Model.prototype, require './fn/modelUtils.coffee'
+_.extend Backbone.Collection.prototype, require './fn/collectionUtils.coffee'
 
 $(document).ready ->
   window.events       = _.extend {}, Backbone.Events
