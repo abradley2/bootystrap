@@ -1,2 +1,0 @@
-# hipster-stack
-### MORE POWAH
