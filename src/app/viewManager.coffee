@@ -16,7 +16,7 @@ class ViewManager extends Backbone.View
 
   render: (options, params) ->
     @cleanupViews options.views
-    if options.layout? then @renderLayout options.layout
+    @renderLayout options.layout
     @renderView options.views, params
 
   renderLayout: (layout) ->
