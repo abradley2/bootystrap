@@ -1,1 +1,20 @@
-h3 Navigation Placeholder
+nav(class='navbar navbar-default')
+  div(class='container-fluid')
+    div(class='navbar-header')
+      button(
+        type='button' 
+        class='navbar-toggle collapsed' 
+        data-toggle='collapse' 
+        data-target='#my-navbar'
+      )
+        span(class='sr-only') ToggleNavigation
+      a(class='navbar-brand' href='#') Home
+    div(class='collapse navbar-collapse' id='my-navbar')
+      ul(class='nav navbar-nav')
+        li
+          a(href='#about') About
+      ul(class='nav navbar-nav navbar-right')
+        li(data-bind='ifnot: view.isLoggedIn')
+          a(href='#login') login
+        li(data-bind='if: view.isLoggedIn')
+          a(href='#logout') logout

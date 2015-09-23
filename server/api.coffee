@@ -1,10 +1,6 @@
 # Uncomment after installing leveldb
-# levelup = require 'levelup'
-# db = levelup('./level');
-
-api = {
-
-}
+levelup = require 'levelup'
+db = levelup('./level');
 
 
-module.exports = api
+module.exports = db

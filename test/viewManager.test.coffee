@@ -1,7 +1,6 @@
 chai = require 'chai'
 require './helpers.coffee'
 
-
 describe 'viewManager', ->
   viewManager = require '../src/app/viewManager.coffee'
   it 'should have renderView function', ->
