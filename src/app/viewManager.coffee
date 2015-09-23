@@ -10,7 +10,7 @@ class ViewManager extends Backbone.View
     return retVal
 
   initialize: ->
-    @setElement '#application-region'
+    @setElement 'body'
     @views = parseFactories require './views/index.coffee'
     @layouts = parseFactories require './layouts/index.coffee'
 
