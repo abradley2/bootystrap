@@ -2,6 +2,9 @@ express             = require 'express'
 bodyParser          = require 'body-parser'
 clientSessions      = require 'client-sessions'
 
+# Database Handler
+dbh = require './dbh'
+
 # App configuration
 app = express()
 app.set('views', __dirname + '/views')

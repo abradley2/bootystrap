@@ -1,9 +1,5 @@
-# Uncomment after installing leveldb
 levelup = require 'levelup'
-db = levelup('./level');
 
-dbh = {
-  # insert methods for handling the db here
-}
+dbh = levelup('./level')
 
 module.exports = dbh
