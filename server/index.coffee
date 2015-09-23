@@ -1,7 +1,8 @@
 # Application
-
-api = require './api.coffee'
 app = require './app.coffee'
+
+# Database Handler
+dbh = require './dbh.coffee'
 
 # Routes
 site = require './routes/site.coffee'
