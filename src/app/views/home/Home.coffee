@@ -4,8 +4,19 @@ class HomeView extends Backbone.View
 
   initialize: ->
     @message = ko.observable()
-    @model = api.get 'messageModel'
+    @model = api.get 'message'
+    @getMessage()
+
+  getMessage: ->
     @model.fetch().then (res) =>
-      @message res.message
+      if res.message?
+        @message res.message
+      else
+        @setMessage 'Welcome to the Hipster Stack!'
+
+  setMessage: (message) ->
+    @model.set 'message', message
+    @model.save().then (res) => @message res.message
+
 
 module.exports = HomeView

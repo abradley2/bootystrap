@@ -9,8 +9,8 @@ buffer = require 'vinyl-buffer'
 assign = require 'lodash.assign'
 
 bundler = browserify {
-  entires: ['./src/app/index.coffee']
-  debug: true
+  entries: ['./src/app/index.coffee']
+  debug: false
 }
 
 bundler.transform jadeify

@@ -1,3 +1,5 @@
+# Database Handler
+
 levelup = require 'levelup'
 
 dbh = levelup('./level')

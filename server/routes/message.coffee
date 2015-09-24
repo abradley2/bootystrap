@@ -5,4 +5,6 @@ exports.getMessage = (req, res) ->
     res.json message: value
 
 exports.putMessage = (req, res) ->
-  dbh.put 'message', req.message
+  dbh.put 'message', req.body.message, ->
+    dbh.get 'message', (err, value) ->
+      res.json message: value

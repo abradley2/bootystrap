@@ -5,6 +5,6 @@ class Api extends Backbone.Model
 
   initialize: ->
     _.each (require './data/index.coffee'), (dataStore, name) =>
-      @set name, dataStore
+      @set name, new dataStore(this)
 
 module.exports = new Api()

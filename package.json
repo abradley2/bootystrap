@@ -1,8 +1,8 @@
 {
   "name": "hipster-stack",
-  "version": "1.0.0",
+  "version": "0.1.1",
   "description": "Rapid Application Development with Express, Backbone and Knockout.",
-  "main": "app.js",
+  "main": "server.js",
   "dependencies": {
     "backbone": "^1.2.3",
     "backbone-relational": "^0.10.0",
@@ -18,8 +18,7 @@
     "knockout": "^3.3.0",
     "leveldown": "^1.4.1",
     "levelup": "^1.2.1",
-    "lodash": "^3.10.0",
-    "mongoose": "^4.1.7"
+    "lodash": "^3.10.0"
   },
   "devDependencies": {
     "bourbon": "^4.2.4",
@@ -45,10 +44,8 @@
     "karma-phantomjs-launcher": "^0.2.1",
     "lodash.assign": "^3.2.0",
     "mocha": "^2.3.2",
-    "mochify": "^2.13.0",
     "phantomjs": "^1.9.18",
     "sinon": "^1.16.1",
-    "stringify": "^3.1.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^3.2.3"
@@ -59,6 +56,7 @@
     "build-client": "gulp build",
     "watch-server": "nodemon server.js",
     "build-server": "node server.js",
+    "build": "gulp build",
     "start": "node server.js"
   },
   "repository": {
