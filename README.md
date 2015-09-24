@@ -17,7 +17,7 @@ flexibility.
 4. [Using Links](#Links)
 
 ### The Hipster Stack
-1. [Extended Views](#ViewApi)
+1. [Extended Views](#ExtendedViews)
 2. [View Manager](#ViewManager)
 3. [Router and Parameters](#Router)
 4. [Models and Collections](#ModelsAndCollections)  
