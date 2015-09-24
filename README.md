@@ -20,7 +20,9 @@ flexibility.
 1. [Extended Views](#ViewApi)
 2. [View Manager](#ViewManager)
 3. [Router and Parameters](#Router)
-4. [Models and Collections](#ModelsAndCollections)
+4. [Models and Collections](#ModelsAndCollections)  
+
+
 ------
 
 ## Build Steps
@@ -115,16 +117,19 @@ exports['home-with-sidebar'] = require './homeWithSidebar.coffee'
 
 <a name="Links"></a>
 ## Linking to the route
-Links correspond with the route exported in the index of the routes folder.
-`exports['home-with-sidebar'] = -> ...` will create a route responsible for the
-/#home-with-sidebar url.  
+Links correspond with the route exported in the index of the routes folder.  
+
+`exports['home-with-sidebar'] = -> ...`  
+
+will create a route responsible for the
+*/#home-with-sidebar* url.  
 
 
 <a name="ExtendedViews"></a>
 ## The Extended Views
-By default, all Backbone.Views are extended with default .render and .remove
+By default, all Backbone.Views are extended with default `.render` and `.remove`
 functions that the viewManager calls on each appropriately. These are defined
-in /src/fn/viewUtils.coffee
+in */src/fn/viewUtils.coffee*
 
 The code for rendering is as follows:
 ```
@@ -137,7 +142,7 @@ exports.render = (params) ->
   if @afterRender? then @afterRender()
 ```
 
-This creates the following situation:
+This creates the following situation:  
 1. There is a beforeRender() and afterRender() hook, which is often useful.
 2. ko.applyBindings is called to the view's region. The view itself is then used
 as the viewModel. If params were passed to the view by the router, they are stored
