@@ -147,6 +147,8 @@ exports.render = (params) ->
 ```
 
 This creates the following situation:  
+
+
 1. There is a beforeRender() and afterRender() hook, which is often useful.
 2. ko.applyBindings is called to the view's region. The view itself is then used
 as the viewModel. If params were passed to the view by the router, they are stored
