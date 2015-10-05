@@ -1,6 +1,5 @@
 exports.render = (params) ->
   if @beforeRender? then @beforeRender()
-  @setElement @region
   @$el.html @template()
   ko.cleanNode @el
   ko.applyBindings {params: params, view: this}, @el

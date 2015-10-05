@@ -1,6 +1,5 @@
 class HomeView extends Backbone.View
   template: require './home.jade'
-  region: '#content-region'
 
   initialize: ->
     @message = ko.observable()

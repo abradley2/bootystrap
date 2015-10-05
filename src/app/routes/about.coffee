@@ -1,9 +1,9 @@
-home = () ->
+about = () ->
   viewManager.render {
     layout: 'default'
     views:
       '#navigation-region': 'navigation'
-      '#content-region': 'home'
+      '#content-region': 'about'
   }
 
-module.exports = home
+module.exports = about
