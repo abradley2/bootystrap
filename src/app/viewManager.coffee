@@ -18,7 +18,7 @@ class ViewManager extends Backbone.View
   render: (renderConfig, routeParams) ->
     @setElement @region
     @cleanupViews _.values renderConfig.views
-    @renderLayout renderConfig.layout
+    if renderConfig.layout? then @renderLayout renderConfig.layout
     @renderViews renderConfig.views, routeParams
 
   remove: ->

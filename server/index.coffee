@@ -11,4 +11,4 @@ app.get '/message', message.getMessage
 app.post '/message', message.putMessage
 
 # Start Server
-server = app.listen 3000
+server = app.listen 3000, -> console.log 'start me up!'

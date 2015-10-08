@@ -77,15 +77,12 @@ _/sidebar/Sidebar.coffee_ (the viewModel for the view)
 ```
 class SidebarView extends Backbone.View
   template: require './sidebar.jade'
-  el: '#sidebar-region'
 
 module.exports = SidebarView
 ```
 It is best to create individual folders for your Backbone.View and associated
-.jade template pairs. All views must return factory/constructors. The `el` attribute
-must reference the selector for layout region it will be rendered in.  The
-`template` attribute must reference a template.jade file.  
-
+.jade template pairs. All views must return factory/constructors for Backbone
+Views.
 
 Then *register* this view in the _index.coffee_ file in the same folder.
 

@@ -1,7 +1,7 @@
 chai = require 'chai'
 require './helpers.coffee'
 
-describe 'oneself', ->
+describe 'testing framework:', ->
   it 'chai should be working', ->
     chai.assert.isDefined chai
   it 'phantomJS should create headless pages', ->

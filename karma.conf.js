@@ -15,7 +15,9 @@ module.exports = function(config) {
       debug: true,
       transform: [ 'coffeeify', 'jadeify' ]
     },
-    browsers: ['PhantomJS'],
-    files: ['./test/**/*.test.coffee']
+    browsers: ['Chrome'],
+    //browser: ['PhantomJS'],
+    //browsers: ['PhantomJS','Chrome'],
+    files: ['./test/*.test.coffee']
   });
 };
