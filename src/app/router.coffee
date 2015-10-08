@@ -1,5 +1,4 @@
 class Router extends Backbone.Router
-  routes: require './routes/index.coffee'
 
   getHierarchy = (routes) ->
     optionalParam = /\((.*?)\)/g
@@ -8,12 +7,14 @@ class Router extends Backbone.Router
     escapeRegExp  = /[\-{}\[\]+?.,\\\^$|#\s]/g
     return
 
-  initialize: ->
-    _.each @routes, (routeFunc, url) =>
+  initialize: (routes) ->
+    _.each routes, (routeFunc, url) =>
       if _.isFunction routeFunc
-        @routes[url] = _.wrap routeFunc, (route) ->
+        @route url, _.wrap routeFunc, (route) ->
           return viewManager.render route()
       else
-        @routes[url] = -> viewManager.render routeFunc
+        @route url, -> viewManager.render routeFunc
 
-module.exports = new Router()
+module.exports = new Router(
+  require './routes/index.coffee'
+)
