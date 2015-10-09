@@ -1,2 +1,2 @@
-chai = require 'chai'
 require './helpers.coffee'
+chai = require 'chai'

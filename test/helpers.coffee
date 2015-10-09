@@ -14,4 +14,6 @@ window.api = require '../src/app/api.coffee'
 window.viewManager = require '../src/app/viewManager.coffee'
 window.router = require '../src/app/router.coffee'
 
+require './stubs.coffee'
+
 Backbone.history.start()

@@ -15,11 +15,11 @@ class ViewManager extends Backbone.View
     @views = parseFactories params.views
     @layouts = parseFactories params.layouts
 
-  render: (renderConfig, routeParams) ->
+  render: (renderConfig) ->
     @setElement @region
     @cleanupViews _.values renderConfig.views
     if renderConfig.layout? then @renderLayout renderConfig.layout
-    @renderViews renderConfig.views, routeParams
+    @renderViews renderConfig.views, renderConfig.params
 
   remove: ->
     @cleanupViews()
@@ -55,8 +55,3 @@ module.exports = new ViewManager(
   layouts: require('./layouts/index.coffee')
   el: 'body'
 )
-
-# views: collection of view names (keys) and factory functions (values)
-# that output a Backbone.View
-
-# layouts: collection of layout names (keys) and template/strings (values)

@@ -1,5 +1,5 @@
 home = () ->
-  return {
+  viewManager.render {
     layout: 'default'
     views:
       '#navigation-region': 'navigation'
